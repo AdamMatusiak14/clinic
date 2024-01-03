@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Doctor grafik</title>
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <th>Patient</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Patient Card</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="docVis:${docVisit}">
+                <td><span th:text="${docVis.patient.FirstName}  +' ' + ${docVis.patient.LastName}"></span></td>
+                <td><span th:text="${docVis.date}"></span></td>
+                <td><span th:text="${docVis.time}"></span></td>
+                <td>
+                    <form action="/patientCardDoc" method="post">
+                        <input type="hidden" name="id" th:value="${docVis.patient.id}" />
+                        <button type="submit">Katrta pacjenta</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

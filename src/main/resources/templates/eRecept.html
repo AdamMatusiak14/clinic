@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>ERecept</title>
+
+</head>
+
+<body>
+    <table>
+
+        <form action="/saveRecept" method="post" th:object="${erecept}">
+            <tr>
+                <td>Imie i nazwisko pacjenta:
+                    <p th:text="${erecept.patient.FirstName} +' '+${erecept.patient.LastName}">Jan Kowalski</p>
+                    <input type="hidden" th:field="${erecept.patient}" />
+                </td>
+            </tr>
+            <tr>
+                <td>Kod: <input type="text" th:field="*{code}"></td>
+            </tr>
+            <tr>
+                <td>Data wystawienia: <input type="date" th:field="*{issueDate}"></td>
+            </tr>
+            <tr>
+                <td>Kto wystawił: <input type="text" th:field="*{doctor}" /></td>
+            </tr>
+            <tr>
+                <td>Leki: <input type="text" th:field="*{medicine}"> </td>
+            </tr>
+            <tr>
+                <td> <button type="submit">Zapisz</button></td>
+            </tr>
+            <form />
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+    <changeSet id="001-testdata-1" author="ad">
+        <insert tableName="doctor">
+            <column name="firstName" value="Paweł" />
+            <column name="lastName" value="Wiktorczyk" />
+            <column name="password"
+                value="{bcrypt}$2a$12$D8qc7sJDS/jllN3f.r1tmOvrhOZOn8s4NMoEpyl3GHRt9K6mlvV.a" /><!--wik-->
+            <column name="role" value="DOCTOR" />
+            <column name="age" value="35" />
+            <column name="specialist" value="internist" />
+            <column name="experience" value="middle" />
+        </insert>
+
+        <insert tableName="doctor">
+            <column name="firstName" value="Anna" />
+            <column name="lastName" value="Krawczyk" />
+            <column name="password"
+                value="{bcrypt}$2a$12$c7g0JuJpDhZgZEVIPVRLvOO1OZDQravB9oUAlL3i.fA6c9DVpqahq" /><!--kra-->
+            <column name="role" value="DOCTOR" />
+            <column name="age" value="43" />
+            <column name="specialist" value="pediatrician" />
+            <column name="experience" value="hight" />
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

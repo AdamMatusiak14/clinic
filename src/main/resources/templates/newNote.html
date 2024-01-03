@@ -1,0 +1,28 @@
+<<!DOCTYPE html>
+
+    <html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Patient Note</title>
+
+    </head>
+
+    <body>
+        <h1>Witam to jest strona na notatkę o pacjencie</h1>
+
+
+        <form action="saveNote" th:method="put" th:object="${patientNoteDto} ">
+            <input type="hidden" method="_method" value="put" />
+            <textarea type="text" th:field="*{note}"></textarea><br><br>
+
+
+            <input type="hidden" th:field="${patient.id}" th:value="*{id}" /><br>
+
+            <button type="submit">Zapisz Notatkę</button>
+        </form>
+
+    </body>
+
+    </html>

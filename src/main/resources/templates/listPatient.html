@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>List Patient</title>
+
+</head>
+
+<body>
+    <h1 th:text="${patient.firstName}+' '+${patient.lastName} ">Jan Kowalski</h1>
+    <h3>E-Recepty</h3>
+    <ul>
+        <li th:each="eRecept:${eRecepts}">
+            <span th:text="${eRecept.issueDate}"></span>
+            <p float="left" width="20%">
+            <form method="post" action="recept">
+                <input type="hidden" name="id" th:value="${eRecept.id}">
+                <button type="submit">Recepta</button>
+            </form>
+            </p>
+        </li>
+    </ul>
+    <h3>Wizyty</h3>
+    <ul>
+        <li th:each="visit:${visits}">
+            <span th:text="${visit.date}"></span>
+            <p>
+            <form method="post" action="visit">
+                <input type="hidden" name="id" th:value="${visit.id}" />
+                <button type="submit">Wizyta</button>
+            </form>
+            </p>
+        </li>
+    </ul>
+
+</body>
+
+</html>>

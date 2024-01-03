@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+</html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Recept</title>
+
+</head>
+
+<body>
+    <table th:object="${eRecept}">
+        <tr>
+            <td>Kod: </td>
+            <td th:text="*{code}"></td>
+            <td>Wystawiono: </td>
+            <td th:text="*{issueDate}"></td>
+        </tr>
+        <tr>
+            <td>Pacjent: </td>
+            <td th:text="${eRecept.patient.firstName}"></td>
+            <td th:text="${eRecept.patient.lastName}"></td>
+        </tr>
+        <tr>
+            <td>Wystawił:</td>
+            <td th:text="*{doctor}"></td>
+        </tr>
+        <tr>
+            <td>Leki:</td>
+            <td th:text="*{medicine}"></td>
+        </tr>
+    </table>
+
+
+    <a href="/">Powrót do strony głownej</a>
+</body>
+
+</html>>

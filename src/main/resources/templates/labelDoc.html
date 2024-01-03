@@ -1,0 +1,45 @@
+<<!DOCTYPE html>
+
+    <html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Doctor Label</title>
+
+        <style>
+            table,
+            th,
+            td {
+                border: 1px solid black;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <table style="width: 40%" th:each="doc:${doctors}">
+
+            <tr>
+                <td>Name</td>
+                <td><span th:text="${doc.firstName}  +' ' + ${doc.lastName}"></span></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><span th:text="${doc.age}"></span></td>
+            </tr>
+            <tr>
+                <td>Specjalist</td>
+                <td><span th:text="${doc.specialist}"></span></td>
+            </tr>
+            <tr>
+                <td>Experience</td>
+                <td><span th:text="${doc.experience}"></span></td>
+
+            </tr>
+            <br>
+            <br>
+        </table>
+    </body>
+
+    </html>

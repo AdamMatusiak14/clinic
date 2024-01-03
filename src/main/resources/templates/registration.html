@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+</html>
+
+<head>
+    <meta charset="utf-8">
+    <title>registration</title>
+    <!--style>
+            #space {
+                margin-bottom: 10px;
+            }
+        </style-->
+</head>
+
+<body>
+    <div>
+        <form action="savevisit" method="post" th:object="${visitDto}">
+            Wybierz Lekarza:
+            <select th:field="*{id}">
+                <option th:each="doctor:${doctors}" th:text="${doctor.firstName} + ${doctor.lastName}"
+                    th:value="${doctor.id}"> Jan Kowalski</option>
+            </select>
+            <br>
+            Twoje imię: <input type="text" th:field="*{firstName}" /> <br>
+            Twoje nazwisko: <input type="text" th:field="*{lastName}" />
+            <br>
+            Hasło: <input type="text" th:field="*{password}" />
+            <br>
+            Wybierz godzine: <input type="time" th:field="*{time}" />
+            <br>
+            Wybierz date: <input type="date" th:field="*{date}" />
+            <br>
+            <button type="submit">Zapisz</button>
+        </form>
+    </div>
+</body>

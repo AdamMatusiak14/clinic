@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clinic</title>
+</head>
+
+<body>
+    <h1>Menu</h1>
+
+    <a sec:authorize="isAuthenticated()" th:text="|Wyloguj się|" th:href="@{/logout}">Wyloguj się</a>
+    <a href="#" th:href="@{/login}">Zaloguj</a>
+
+    <a href="#" th:href="@{/registration}">Rejestracja</a>
+    <a href="#" th:href="@{/listPatient}">Karta Pacjenta</a>
+    <a href="#" th:href="@{/doctorInf}">Informacje o Lekarzach</a>
+    <a href="#" th:href="@{/doctor}">Panel lekarza</a>
+</body>

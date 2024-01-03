@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+    <changeSet id="002-testdata-1" author="ad">
+        <insert tableName="patient">
+            <column name="firstName" value="Michał" />
+            <column name="lastName" value="Pawel" />
+            <column name="password"
+                value="{bcrypt}$2a$12$VXh9jaRDrrrWhnN53t3e4O.5mv0f0XyO1gWTM7hgxCZt2dVOUjddy" /><!--hasło:
+            paw-->
+            <column name="role" value="PATIENT" />
+            <column name="note" value="chora noga" />
+
+        </insert>
+
+        <insert tableName="patient">
+            <column name="firstName" value="Bożena" />
+            <column name="lastName" value="Makarczyk" />
+            <column name="password"
+                value="{bcrypt}$2a$12$r3QTLae2sAMK3Hnm8JXzNONYAWOyJGQo7eK5SpCuzWZLPJxyQv2sO" /><!--haslo:
+            boz-->
+            <column name="role" value="PATIENT" />
+            <column name="note" value="Bole głowy" />
+
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

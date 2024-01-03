@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Visit</title>
+
+
+</head>
+
+<body>
+
+    <table th:object="${visit}">
+        <tr>
+            <td>Godzina</td>
+            <td th:text="*{time}"></td>
+        </tr>
+        <tr>
+            <td>Data: </td>
+            <td th:text="*{date}"></td>
+        </tr>
+        <tr>
+            <td>Lekarz:</td>
+            <td th:text="${visit.doctor.firstName}"></td>
+            <td th:text="${visit.doctor.lastName}"></td>
+        </tr>
+    </table>
+</body>
+
+</html>>

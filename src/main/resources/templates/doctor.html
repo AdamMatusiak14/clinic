@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Doctor panel</title>
+    <!-- przejście do panelu z wizytami dla Lekarzy-->
+</head>
+
+<body>
+    <h1>Panel lekarza</h1>
+    <form action="/grafik" method="post" th:object="${doctorDto}">
+        <label>lek.<span th:text="${doctor.firstName} + ' ' + ${doctor.lastName}"></span>
+        </label>
+        <input type="hidden" th:field="${doctor.id}" th:value="*{id}" />
+
+        <br>
+        <br>
+        Wybierz date:
+        <input type="date" th:field="*{date}" />
+        <br><br>
+        <button type="submit">Znajdz</button>
+    </form>
+</body>
+
+</html>

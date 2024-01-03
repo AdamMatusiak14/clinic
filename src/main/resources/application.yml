@@ -1,0 +1,26 @@
+spring:
+  datasource:
+     url: jdbc:h2:mem:test
+     username: sa
+  mvc:
+      hiddenmethod:
+        filter:
+          enabled: true
+      format:
+        date: iso
+        date-time: iso
+        time: iso
+  jpa:
+    show-sql: true
+    hibernate: 
+      ddl-auto: none
+      naming: 
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  h2:
+    console:
+      enabled: true
+      path: /konsola-h2
+   
+  liquibase:
+    change-log: classpath:db/master.xml
+
